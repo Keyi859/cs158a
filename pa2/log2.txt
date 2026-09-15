@@ -1,0 +1,22 @@
+[13:21:01.375] Process started: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599
+[13:21:01.376] Server listening on 127.0.0.1:5002
+[13:21:01.376] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:02.036] Accepted connection from ('127.0.0.1', 50912)
+[13:21:02.382] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:03.387] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:04.389] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:05.391] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:06.397] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:07.404] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:08.409] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:09.411] Cannot connect to 127.0.0.1:5003; retrying
+[13:21:10.416] Connected to 127.0.0.1:5003
+[13:21:10.416] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0
+[13:21:10.417] Received: uuid=4fab85c8-eebb-4c50-af11-09e20bef4d1b, flag=0, less, 0
+[13:21:10.417] Ignored: uuid=4fab85c8-eebb-4c50-af11-09e20bef4d1b is smaller
+[13:21:10.417] Received: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3, flag=0, less, 0
+[13:21:10.417] Ignored: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3 is smaller
+[13:21:10.417] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0, same, 0
+[13:21:10.417] Leader is decided to d3e0fac1-74f9-4394-9a8e-ec83cb342599.
+[13:21:10.417] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1
+[13:21:10.417] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1, same, 1, leader_id=d3e0fac1-74f9-4394-9a8e-ec83cb342599

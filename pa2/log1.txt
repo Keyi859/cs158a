@@ -1,0 +1,19 @@
+[13:20:55.006] Process started: uuid=4fab85c8-eebb-4c50-af11-09e20bef4d1b
+[13:20:55.006] Server listening on 127.0.0.1:5001
+[13:20:55.006] Cannot connect to 127.0.0.1:5002; retrying
+[13:20:56.011] Cannot connect to 127.0.0.1:5002; retrying
+[13:20:57.017] Cannot connect to 127.0.0.1:5002; retrying
+[13:20:58.021] Cannot connect to 127.0.0.1:5002; retrying
+[13:20:59.027] Cannot connect to 127.0.0.1:5002; retrying
+[13:21:00.032] Cannot connect to 127.0.0.1:5002; retrying
+[13:21:01.034] Cannot connect to 127.0.0.1:5002; retrying
+[13:21:02.036] Connected to 127.0.0.1:5002
+[13:21:10.348] Accepted connection from ('127.0.0.1', 50941)
+[13:21:10.348] Sent: uuid=4fab85c8-eebb-4c50-af11-09e20bef4d1b, flag=0
+[13:21:10.416] Received: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3, flag=0, greater, 0
+[13:21:10.417] Sent: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3, flag=0
+[13:21:10.417] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0, greater, 0
+[13:21:10.417] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0
+[13:21:10.417] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1, greater, 0
+[13:21:10.417] Leader recorded: d3e0fac1-74f9-4394-9a8e-ec83cb342599
+[13:21:10.417] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1

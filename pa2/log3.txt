@@ -1,0 +1,10 @@
+[13:21:10.347] Process started: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3
+[13:21:10.347] Server listening on 127.0.0.1:5003
+[13:21:10.348] Connected to 127.0.0.1:5001
+[13:21:10.416] Accepted connection from ('127.0.0.1', 50942)
+[13:21:10.416] Sent: uuid=ad8cb709-5f6e-4ebd-b4ce-3812776746a3, flag=0
+[13:21:10.416] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0, greater, 0
+[13:21:10.417] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=0
+[13:21:10.417] Received: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1, greater, 0
+[13:21:10.417] Leader recorded: d3e0fac1-74f9-4394-9a8e-ec83cb342599
+[13:21:10.417] Sent: uuid=d3e0fac1-74f9-4394-9a8e-ec83cb342599, flag=1
