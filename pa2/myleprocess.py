@@ -8,22 +8,29 @@ from dataclasses import dataclass
 from datetime import datetime
 
 
+RETRY_SECONDS = 2
+
+
 @dataclass
 class Message:
-    uuid: uuid.UUID
+    candidate: uuid.UUID
     flag: int
 
-    def to_json(self):
-        return json.dumps({
-            "uuid": str(self.uuid),
+    def encode(self):
+        data = {
+            "uuid": str(self.candidate),
             "flag": self.flag
-        })
+        }
+
+       
+        return (json.dumps(data) + "\n").encode("utf-8")
 
     @staticmethod
-    def from_json(data):
+    def decode(data):
         obj = json.loads(data)
+
         return Message(
-            uuid=uuid.UUID(obj["uuid"]),
+            candidate=uuid.UUID(obj["uuid"]),
             flag=int(obj["flag"])
         )
 
@@ -33,13 +40,14 @@ class LeaderElectionProcess:
         self.config_file = config_file
         self.log_file = log_file
 
-        self.uuid = uuid.uuid4()
+        self.identifier = uuid.uuid4()
         self.leader_id = None
         self.state = 0
         self.running = True
 
         self.incoming_socket = None
         self.outgoing_socket = None
+        self.listener = None
 
         self.incoming_ready = threading.Event()
         self.outgoing_ready = threading.Event()
@@ -47,75 +55,143 @@ class LeaderElectionProcess:
         self.send_lock = threading.Lock()
         self.log_lock = threading.Lock()
 
+        self.startup_error = None
+
         self.local_address, self.next_address = self.read_config()
 
-        open(self.log_file, "w").close()
-        self.log(f"Process started: uuid={self.uuid}")
+        open(self.log_file, "w", encoding="utf-8").close()
+
+        self.log(
+            f"Process started: uuid={self.identifier}"
+        )
 
     def read_config(self):
-        with open(self.config_file, "r") as file:
-            lines = [
-                line.strip()
-                for line in file
-                if line.strip()
-            ]
+        addresses = []
 
-        local_host, local_port = lines[0].split(",")
-        next_host, next_port = lines[1].split(",")
+        with open(self.config_file, "r", encoding="utf-8") as file:
+            for line in file:
+               
+                line = line.split("#", 1)[0].strip()
 
-        return (
-            (local_host.strip(), int(local_port.strip())),
-            (next_host.strip(), int(next_port.strip()))
-        )
+                if not line:
+                    continue
+
+                host, port = line.split(",")
+
+                addresses.append(
+                    (host.strip(), int(port.strip()))
+                )
+
+        if len(addresses) != 2:
+            raise ValueError(
+                "config.txt must contain exactly two address lines"
+            )
+
+        return addresses[0], addresses[1]
 
     def log(self, message):
         timestamp = datetime.now().strftime("%H:%M:%S.%f")[:-3]
 
         with self.log_lock:
-            with open(self.log_file, "a") as file:
+            with open(
+                self.log_file,
+                "a",
+                encoding="utf-8"
+            ) as file:
                 file.write(f"[{timestamp}] {message}\n")
 
     def start_server(self):
         host, port = self.local_address
 
-        server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        server.bind((host, port))
-        server.listen(1)
+        try:
+            self.listener = socket.socket(
+                socket.AF_INET,
+                socket.SOCK_STREAM
+            )
 
-        self.log(f"Server listening on {host}:{port}")
+            self.listener.setsockopt(
+                socket.SOL_SOCKET,
+                socket.SO_REUSEADDR,
+                1
+            )
 
-        self.incoming_socket, address = server.accept()
-        self.log(f"Accepted connection from {address}")
+            self.listener.bind((host, port))
+            self.listener.listen(1)
 
-        self.incoming_ready.set()
+            self.log(
+                f"Listening on {host}:{port}"
+            )
+
+            self.incoming_socket, address = (
+                self.listener.accept()
+            )
+
+            self.log(
+                f"Accepted connection from {address}"
+            )
+
+            self.incoming_ready.set()
+
+        except OSError as error:
+            self.startup_error = error
+            self.log(f"Server error: {error}")
+            self.incoming_ready.set()
 
     def start_client(self):
         host, port = self.next_address
 
         while self.running:
+            client = socket.socket(
+                socket.AF_INET,
+                socket.SOCK_STREAM
+            )
+
             try:
-                client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                client.settimeout(3)
                 client.connect((host, port))
+                client.settimeout(None)
+
                 self.outgoing_socket = client
 
-                self.log(f"Connected to {host}:{port}")
+                self.log(
+                    f"Connected to neighbor {host}:{port}"
+                )
+
                 self.outgoing_ready.set()
                 return
 
             except OSError:
-                self.log(f"Cannot connect to {host}:{port}; retrying")
-                time.sleep(1)
+                client.close()
+
+                self.log(
+                    f"Cannot connect to {host}:{port}; "
+                    f"retrying in {RETRY_SECONDS} seconds"
+                )
+
+                time.sleep(RETRY_SECONDS)
 
     def send_message(self, message):
-        data = (message.to_json() + "\n").encode("utf-8")
+        if self.outgoing_socket is None:
+            raise RuntimeError(
+                "Outgoing connection is not ready"
+            )
 
         with self.send_lock:
-            self.outgoing_socket.sendall(data)
+            self.outgoing_socket.sendall(message.encode())
 
         self.log(
-            f"Sent: uuid={message.uuid}, flag={message.flag}"
+            f"Sent: uuid={message.candidate}, "
+            f"flag={message.flag}"
         )
+
+    def compare_candidate(self, candidate):
+        if candidate == self.identifier:
+            return "same"
+
+        if candidate > self.identifier:
+            return "greater"
+
+        return "less"
 
     def receive_messages(self):
         reader = self.incoming_socket.makefile(
@@ -123,72 +199,83 @@ class LeaderElectionProcess:
             encoding="utf-8"
         )
 
-        while self.running:
-            line = reader.readline()
-
-            if not line:
+        for line in reader:
+            if not self.running:
                 break
 
-            message = Message.from_json(line.strip())
+            line = line.strip()
 
-            if message.uuid > self.uuid:
-                comparison = "greater"
-            elif message.uuid < self.uuid:
-                comparison = "less"
-            else:
-                comparison = "same"
+            if not line:
+                continue
 
-            state_info = str(self.state)
+            try:
+                message = Message.decode(line)
+            except (json.JSONDecodeError, ValueError) as error:
+                self.log(f"Invalid message: {error}")
+                continue
+
+            relationship = self.compare_candidate(
+                message.candidate
+            )
 
             if self.state == 1:
-                state_info += f", leader_id={self.leader_id}"
+                state_info = (
+                    f"1, leader_id={self.leader_id}"
+                )
+            else:
+                state_info = "0"
 
             self.log(
-                f"Received: uuid={message.uuid}, "
+                f"Received: uuid={message.candidate}, "
                 f"flag={message.flag}, "
-                f"{comparison}, {state_info}"
+                f"{relationship}, state={state_info}"
             )
 
             if message.flag == 0:
                 self.handle_election_message(message)
-            else:
+            elif message.flag == 1:
                 self.handle_leader_message(message)
+            
+            if not self.running:
+                break
 
     def handle_election_message(self, message):
-        if message.uuid == self.uuid:
-            self.leader_id = self.uuid
+        if message.candidate == self.identifier:
+            self.leader_id = self.identifier
             self.state = 1
 
             self.log(
-                f"Leader is decided to {self.leader_id}."
+                f"Leader is decided to {self.leader_id}"
             )
 
             self.send_message(
-                Message(uuid=self.leader_id, flag=1)
+                Message(
+                    candidate=self.identifier,
+                    flag=1
+                )
             )
 
-        elif message.uuid > self.uuid:
+        elif message.candidate > self.identifier:
             self.send_message(message)
 
         else:
             self.log(
-                f"Ignored: uuid={message.uuid} is smaller"
+                f"Ignored smaller candidate: "
+                f"{message.candidate}"
             )
 
     def handle_leader_message(self, message):
-        if self.leader_id is None:
-            self.leader_id = message.uuid
-            self.state = 1
+        self.leader_id = message.candidate
+        self.state = 1
 
-            self.log(
-                f"Leader recorded: {self.leader_id}"
-            )
+        self.log(
+            f"Leader recorded: {self.leader_id}"
+        )
 
-        if message.uuid == self.uuid:
-            self.running = False
-            return
+        if message.candidate != self.identifier:
+            self.send_message(message)
 
-        self.send_message(message)
+        # The leader message has completed one full ring.
         self.running = False
 
     def run(self):
@@ -196,6 +283,7 @@ class LeaderElectionProcess:
             target=self.start_server,
             daemon=True
         )
+
         client_thread = threading.Thread(
             target=self.start_client,
             daemon=True
@@ -207,13 +295,41 @@ class LeaderElectionProcess:
         self.incoming_ready.wait()
         self.outgoing_ready.wait()
 
+        if self.startup_error is not None:
+            raise self.startup_error
+
+        # Start the election with this node's UUID.
         self.send_message(
-            Message(uuid=self.uuid, flag=0)
+            Message(
+                candidate=self.identifier,
+                flag=0
+            )
         )
 
-        self.receive_messages()
+        try:
+            self.receive_messages()
+        finally:
+            self.close()
+
+        self.log(
+            f"Leader is decided to {self.leader_id}"
+        )
 
         print(f"leader is {self.leader_id}")
+
+    def close(self):
+        self.running = False
+
+        for connection in (
+            self.incoming_socket,
+            self.outgoing_socket,
+            self.listener
+        ):
+            if connection is not None:
+                try:
+                    connection.close()
+                except OSError:
+                    pass
 
 
 def main():
@@ -223,6 +339,7 @@ def main():
         "--config",
         default="config.txt"
     )
+
     parser.add_argument(
         "--log",
         default="log.txt"
@@ -234,6 +351,7 @@ def main():
         args.config,
         args.log
     )
+
     process.run()
 
 
