@@ -29,6 +29,7 @@ downloads/
 
 log.txt
     Log of network messages and peer-table changes
+```
 
 2. Technologies
 The agent uses:
@@ -402,7 +403,7 @@ Keyi Tan implemented and tested:
 - Network testing and integration
 14. Submission Files
 The final submission directory contains:
-pa2/
+pa3/
 ├── p2p_agent.py
 ├── README.md
 ├── log.txt
