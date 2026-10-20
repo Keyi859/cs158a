@@ -59,12 +59,17 @@ The program automatically calculates the directed broadcast address for the acti
 Some public or campus Wi-Fi networks may block UDP broadcast traffic.
 
 ## 3. Directory Structure
-pa2/
+
+```text
+pa3/
 ├── p2p_agent.py
 ├── README.md
 ├── log.txt
+├── log_imac.txt
+├── log_macair.txt
 ├── shared/
 └── downloads/
+```
 
 The shared/ directory contains files offered to peers.
 
@@ -154,7 +159,7 @@ File content is encoded using Base64 and placed inside a JSON message.
 Base64 allows arbitrary binary file data to be safely carried inside JSON.
 
 ## 7. UDP Message Formats
-7.1 Peer Request
+### 7.1 Peer Request
 A peer request is sent using UDP broadcast.
 
 The destination UDP port is:
@@ -177,7 +182,7 @@ request_id	UUID identifying this discovery request
 
 
 A node ignores a peer request if the node_id matches its own node ID.
-7.2 Peer ACK
+### 7.2 Peer ACK
 A node sends a peer ACK after receiving a peer request.
 
 Example:
@@ -201,7 +206,7 @@ After receiving a valid peer ACK, the requesting node establishes a TCP connecti
 If both nodes request each other at the same time, the node IDs are compared so that only one TCP connection is created.
 
 ## 8. TCP Message Formats
-8.1 HELLO
+### 8.1 HELLO
 HELLO is the first TCP message exchanged by both sides.
 
 Example:
@@ -212,7 +217,7 @@ Example:
 }
 
 After both nodes exchange HELLO messages, the connection is added to the peer table.
-8.2 File List
+### 8.2 File List
 A file list is sent immediately after a new TCP connection is established.
 
 It is also sent every 10 seconds.
@@ -227,7 +232,7 @@ Example:
 }
 
 The file list contains filenames only. It does not contain file contents.
-8.3 Data Request
+### 8.3 Data Request
 Example:
 {
   "type": "data_request",
@@ -235,7 +240,7 @@ Example:
 }
 
 A peer sends this message to request a file from another peer.
-8.4 File Data
+### 8.4 File Data
 A successful file response contains:
 {
   "type": "file_data",
@@ -309,7 +314,7 @@ MacBook Air	10.0.0.248	5003
 All nodes used UDP port:
 54321
 
-12.1 Node Discovery and TCP Connections
+### 12.1 Node Discovery and TCP Connections
 The MacBook Pro node was started on TCP port 5001.
 
 The iMac node was started on TCP port 5002 and connected to the MacBook Pro.
@@ -331,7 +336,7 @@ Connected peers:
 
 This demonstrated UDP discovery and TCP connection establishment.
 
-12.2 File List Propagation
+### 12.2 File List Propagation
 The MacBook Air advertised the following files:
 imac_note.txt
 imac_only.txt
@@ -346,7 +351,7 @@ filenames=['imac_note.txt', 'imac_only.txt', 'imac_temporary.txt',
 
 This demonstrated that file lists were exchanged and updated between peers.
 
-12.3 Successful File Transfer
+### 12.3 Successful File Transfer
 The iMac requested a file from the MacBook Air using:
 get macair_note.txt
 
@@ -365,7 +370,7 @@ shared/macair_note.txt
 
 This demonstrated successful file transfer and file storage.
 
-12.4 Node Leaving the Network
+### 12.4 Node Leaving the Network
 The MacBook Air node was stopped using:
 quit
 
@@ -417,6 +422,8 @@ Keyi Tan implemented and tested:
 
 ## 14. Submission Files
 The final submission directory contains:
+
+```text
 pa3/
 ├── p2p_agent.py
 ├── README.md
@@ -425,3 +432,4 @@ pa3/
 ├── log_macair.txt
 ├── shared/
 └── downloads/
+```
