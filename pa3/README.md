@@ -31,7 +31,7 @@ log.txt
     Log of network messages and peer-table changes
 ```
 
-2. Technologies
+## 2. Technologies
 The agent uses:
 - Python 3
 - UDP broadcast
@@ -57,7 +57,8 @@ The program automatically calculates the directed broadcast address for the acti
 10.0.0.255
 
 Some public or campus Wi-Fi networks may block UDP broadcast traffic.
-3. Directory Structure
+
+## 3. Directory Structure
 pa2/
 ├── p2p_agent.py
 ├── README.md
@@ -70,7 +71,8 @@ The shared/ directory contains files offered to peers.
 The downloads/ directory contains files downloaded from peers.
 
 A downloaded file is first written completely to downloads/. Only after the transfer completes successfully is it copied into shared/.
-4. How to Run
+
+## 4. How to Run
 From the pa2 directory, run:
 python3 p2p_agent.py TCP_PORT
 
@@ -115,7 +117,8 @@ help
 Displays the available commands.
 quit
 Stops the agent and closes its sockets.
-5. Message Boundary Format
+
+## 5. Message Boundary Format
 TCP is a byte stream, so the program uses a 4-byte length prefix.
 
 Every TCP message has this format:
@@ -138,7 +141,8 @@ Receiving fewer bytes than requested does not mean that the peer disconnected.
 An empty read means that the peer closed the connection.
 
 The program also handles ConnectionResetError as a disconnection.
-6. Message Encoding
+
+## 6. Message Encoding
 All TCP messages are encoded as UTF-8 JSON.
 
 Every message contains a type field.
@@ -148,7 +152,8 @@ The receiver uses the type field to identify the message.
 File content is encoded using Base64 and placed inside a JSON message.
 
 Base64 allows arbitrary binary file data to be safely carried inside JSON.
-7. UDP Message Formats
+
+## 7. UDP Message Formats
 7.1 Peer Request
 A peer request is sent using UDP broadcast.
 
@@ -194,7 +199,8 @@ ack_for	Request ID from the original peer request
 After receiving a valid peer ACK, the requesting node establishes a TCP connection using the advertised IP address and TCP port.
 
 If both nodes request each other at the same time, the node IDs are compared so that only one TCP connection is created.
-8. TCP Message Formats
+
+## 8. TCP Message Formats
 8.1 HELLO
 HELLO is the first TCP message exchanged by both sides.
 
@@ -239,7 +245,8 @@ A successful file response contains:
 }
 
 If the file cannot be found, the response contains an error status.
-9. File Transfer Behavior
+
+## 9. File Transfer Behavior
 Before sending a file, the agent checks that the requested filename is safe.
 
 The agent rejects unsafe filenames such as filenames containing path traversal characters.
@@ -251,7 +258,8 @@ The receiving node decodes the file and writes it completely to the downloads/ d
 After the download succeeds, the file is copied into the shared/ directory.
 
 This allows the newly downloaded file to be advertised to other peers.
-10. Peer Disconnection Behavior
+
+## 10. Peer Disconnection Behavior
 When a TCP connection closes, the corresponding peer is removed from the peer table.
 
 The peer's advertised file list is also removed.
@@ -262,7 +270,8 @@ For example:
 PEER_REMOVED | connection closed; file list dropped
 
 This ensures that files from an offline peer are no longer displayed by other nodes.
-11. Logging
+
+## 11. Logging
 The program records important events in log.txt.
 
 Examples include:
@@ -286,7 +295,7 @@ SYSTEM | peer=- | type=FILE_SAVED | downloads/macair_note.txt and shared/macair_
 Example disconnection log:
 SYSTEM | peer=10.0.0.248:5003 | type=PEER_REMOVED | connection closed; file list dropped
 
-12. Three-Node Demonstration
+## 12. Three-Node Demonstration
 The original assignment requests a five-node demonstration. The instructor approved a three-node demonstration for this individual submission.
 
 All computers were connected to the same local network.
@@ -321,6 +330,7 @@ Connected peers:
   address=10.0.0.248:5003
 
 This demonstrated UDP discovery and TCP connection establishment.
+
 12.2 File List Propagation
 The MacBook Air advertised the following files:
 imac_note.txt
@@ -335,6 +345,7 @@ filenames=['imac_note.txt', 'imac_only.txt', 'imac_temporary.txt',
 'macair_note.txt', 'sample.txt']
 
 This demonstrated that file lists were exchanged and updated between peers.
+
 12.3 Successful File Transfer
 The iMac requested a file from the MacBook Air using:
 get macair_note.txt
@@ -353,6 +364,7 @@ downloads/macair_note.txt
 shared/macair_note.txt
 
 This demonstrated successful file transfer and file storage.
+
 12.4 Node Leaving the Network
 The MacBook Air node was stopped using:
 quit
@@ -373,7 +385,8 @@ Connected peers:
 The MacBook Air node and its advertised macair_note.txt file were no longer shown.
 
 This demonstrated that a leaving node is removed from the peer table and its files disappear from the other nodes' file tables.
-13. Individual Work
+
+## 13. Individual Work
 This project was completed individually by:
 Keyi Tan
 
@@ -401,7 +414,8 @@ Keyi Tan implemented and tested:
 - Disconnection handling
 - Logging
 - Network testing and integration
-14. Submission Files
+
+## 14. Submission Files
 The final submission directory contains:
 pa3/
 ├── p2p_agent.py
