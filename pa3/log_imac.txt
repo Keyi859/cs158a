@@ -1,0 +1,459 @@
+[14:39:18.441] Process started: uuid=62d67658-8a60-45d4-b5d3-da8908629d18
+[14:39:18.441] Listening on 192.168.1.3:5001
+[14:39:18.584] Connected to neighbor 192.168.1.11:5001
+[14:40:38.816] Accepted connection from ('192.168.1.4', 50159)
+2026-10-11T20:48:55-07:00 | SYSTEM | peer=- | type=START | shared files=['sample.txt']
+2026-10-11T20:51:40-07:00 | SYSTEM | peer=- | type=START | node_id=42714c44-e680-4073-9943-2b52b816ac4e, tcp_port=5001
+2026-10-11T20:51:40-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-11T20:53:29-07:00 | SYSTEM | peer=- | type=START | node_id=167bb8a1-d84a-4747-bee8-ecd591f7ae8b, tcp_port=5001
+2026-10-11T20:53:29-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-11T20:53:30-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5001
+2026-10-11T20:54:41-07:00 | SYSTEM | peer=- | type=START | node_id=c6f13848-2de2-4f89-a0f0-6572d65251a4, tcp_port=5002
+2026-10-11T20:54:41-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-11T20:54:42-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-11T20:54:42-07:00 | RECEIVED | peer=10.0.0.126:50637 | type=PEER_REQUEST | remote_tcp_port=5002
+2026-10-11T20:54:42-07:00 | SENT | peer=10.0.0.126:50637 | type=PEER_ACK | tcp_port=5001
+2026-10-11T20:57:06-07:00 | SYSTEM | peer=- | type=STOP | agent stopped by user
+2026-10-11T20:57:08-07:00 | SYSTEM | peer=- | type=STOP | agent stopped by user
+2026-10-11T20:58:46-07:00 | SYSTEM | peer=- | type=START | node_id=0e1dc13f-c61a-4352-838b-7f335ec4e129, tcp_port=5001
+2026-10-11T20:58:46-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-11T20:58:47-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5001
+2026-10-11T20:59:26-07:00 | SYSTEM | peer=- | type=START | node_id=0fff0877-0376-4795-9370-61a40791cc80, tcp_port=5002
+2026-10-11T20:59:26-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-11T20:59:27-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-11T20:59:27-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5002
+2026-10-11T20:59:27-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5001
+2026-10-12T15:07:15-07:00 | SYSTEM | peer=- | type=START | node_id=a2414cce-2e1f-4506-be46-abbb7d58dac9, tcp_port=5002
+2026-10-12T15:07:15-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-12T15:07:16-07:00 | SYSTEM | peer=- | type=UDP_ERROR | [Errno 9] Bad file descriptor
+2026-10-12T15:20:46-07:00 | SYSTEM | peer=- | type=START | node_id=e820b97a-ef2c-4661-9425-27f126384ccf, tcp_port=5002
+2026-10-12T15:20:46-07:00 | SYSTEM | peer=- | type=UDP_LISTEN | port=54321
+2026-10-12T15:20:47-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-12T15:20:47-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_ACK | remote_tcp_port=5001
+2026-10-12T15:20:47-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5001
+2026-10-12T15:20:47-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5002
+2026-10-12T15:24:17-07:00 | SYSTEM | peer=- | type=STOP | agent stopped by user
+2026-10-12T15:31:58-07:00 | SYSTEM | peer=- | type=START | node_id=1ae57575-9c5b-45e4-9fda-08c8e5ab5a37, tcp_port=5002
+2026-10-12T15:31:58-07:00 | SYSTEM | peer=- | type=TCP_LISTEN | port=5002
+2026-10-12T15:31:59-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-12T15:31:59-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5001
+2026-10-12T15:31:59-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5002
+2026-10-12T15:31:59-07:00 | SENT | peer=10.0.0.126:63777 | type=hello
+2026-10-12T15:31:59-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=hello
+2026-10-12T15:31:59-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_ADDED | node_id=b0e8e10f-d86a-4397-a964-bdfc4db989ac
+2026-10-12T15:31:59-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:31:59-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:31:59-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:31:59-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_ACK | remote_tcp_port=5001
+2026-10-12T15:32:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:32:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:32:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:32:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:32:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:32:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:32:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:32:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:33:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:33:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:33:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:34:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:34:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:34:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:35:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:35:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:35:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:36:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:36:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:36:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:28-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:28-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:28-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:38-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:38-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:38-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:48-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:48-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:48-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:37:58-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:37:58-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:37:58-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:38:08-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:38:08-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:38:08-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:38:18-07:00 | SENT | peer=b0e8e10f-d86a-4397-a964-bdfc4db989ac | type=file_list
+2026-10-12T15:38:18-07:00 | RECEIVED | peer=10.0.0.126:63777 | type=file_list
+2026-10-12T15:38:18-07:00 | SYSTEM | peer=10.0.0.126:63777 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-12T15:38:21-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_REMOVED | connection closed; file list dropped
+2026-10-18T20:41:34-07:00 | SYSTEM | peer=- | type=START | node_id=ca951a87-dc5b-4222-a604-775060a2c107, tcp_port=5002
+2026-10-18T20:41:34-07:00 | SYSTEM | peer=- | type=TCP_LISTEN | port=5002
+2026-10-18T20:41:35-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-18T20:41:53-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5001
+2026-10-18T20:41:53-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5002
+2026-10-18T20:41:53-07:00 | SENT | peer=10.0.0.126:55959 | type=hello
+2026-10-18T20:41:53-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=hello
+2026-10-18T20:41:53-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_ADDED | node_id=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b
+2026-10-18T20:41:53-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:41:53-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:41:53-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:41:54-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:02-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:02-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:04-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:12-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:12-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:14-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:22-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:22-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:24-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:32-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:32-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:34-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:42-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:42-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:44-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:42:52-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:42:52-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:42:54-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:02-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:02-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:04-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:12-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:12-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:14-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:22-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:22-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:24-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:32-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:32-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:34-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:42-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:42-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:44-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:43:52-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:43:52-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:43:54-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:02-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:02-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:04-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:12-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:12-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:14-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:22-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:22-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:24-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:32-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:32-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:34-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:42-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:42-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:44-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:44:52-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:44:52-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:44:54-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:45:02-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:45:02-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:45:04-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:45:12-07:00 | RECEIVED | peer=10.0.0.126:55959 | type=file_list
+2026-10-18T20:45:12-07:00 | SYSTEM | peer=10.0.0.126:55959 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:45:14-07:00 | SENT | peer=0f5c5ba1-74eb-43fe-aa22-b99a9d48b33b | type=file_list
+2026-10-18T20:45:21-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_REMOVED | connection closed; file list dropped
+2026-10-18T20:49:13-07:00 | SYSTEM | peer=- | type=STOP | agent stopped
+2026-10-18T20:51:14-07:00 | SYSTEM | peer=- | type=START | node_id=bda5b7b6-89ff-4cf2-8fa6-f8b685922871, tcp_port=5002
+2026-10-18T20:51:14-07:00 | SYSTEM | peer=- | type=TCP_LISTEN | port=5002
+2026-10-18T20:51:15-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-18T20:51:53-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5001
+2026-10-18T20:51:53-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5002
+2026-10-18T20:51:53-07:00 | SENT | peer=10.0.0.126:56000 | type=hello
+2026-10-18T20:51:53-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=hello
+2026-10-18T20:51:53-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_ADDED | node_id=e2576236-bce9-479d-a22f-3ffd381fcfbf
+2026-10-18T20:51:53-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:51:53-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:51:53-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:51:54-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:02-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:02-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:04-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:12-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:12-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:14-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:22-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:22-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:24-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:32-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:32-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:34-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:42-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:42-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:44-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:52:52-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:52:52-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:52:54-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:02-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:02-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:04-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:12-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:12-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:14-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:22-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:22-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:24-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:32-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:32-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:34-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:42-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:42-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:44-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:53:52-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:53:52-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:53:54-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:02-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:54:02-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:54:04-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:12-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:54:12-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:54:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:22-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:54:22-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:54:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:32-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:54:32-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:54:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:42-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:54:42-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:54:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:54:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:16-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:55:16-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:55:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:26-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:55:26-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['sample.txt']
+2026-10-18T20:55:28-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=data_request
+2026-10-18T20:55:28-07:00 | SENT | peer=10.0.0.126:56000 | type=file_data
+2026-10-18T20:55:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:36-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:55:36-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:55:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:46-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:55:46-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:55:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:55:56-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:55:56-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:06-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:06-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:16-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:16-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:26-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:26-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:36-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:36-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:46-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:46-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:56:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:56:56-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:56:56-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:06-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:06-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:16-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:16-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:26-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:26-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:36-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:36-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:46-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:46-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:57:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:57:56-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:57:56-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:58:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:58:06-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:58:06-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:58:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:58:16-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:58:16-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:58:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:58:26-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:58:26-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:58:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:58:36-07:00 | RECEIVED | peer=10.0.0.126:56000 | type=file_list
+2026-10-18T20:58:36-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T20:58:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:58:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T20:59:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:25-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:35-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:45-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:00:55-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:01:05-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:01:15-07:00 | SENT | peer=e2576236-bce9-479d-a22f-3ffd381fcfbf | type=file_list
+2026-10-18T21:01:17-07:00 | SYSTEM | peer=10.0.0.126:56000 | type=CONNECTION_ERROR | [Errno 60] Operation timed out
+2026-10-18T21:01:17-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_REMOVED | connection closed; file list dropped
+2026-10-18T21:14:04-07:00 | SYSTEM | peer=- | type=STOP | agent stopped
+2026-10-18T21:14:47-07:00 | SYSTEM | peer=- | type=START | node_id=e622ed84-dade-4927-90b1-d8c88a1f43b2, tcp_port=5002
+2026-10-18T21:14:47-07:00 | SYSTEM | peer=- | type=TCP_LISTEN | port=5002
+2026-10-18T21:14:48-07:00 | SENT | peer=broadcast | type=PEER_REQUEST | tcp_port=5002
+2026-10-18T21:15:47-07:00 | RECEIVED | peer=10.0.0.126:54321 | type=PEER_REQUEST | remote_tcp_port=5001
+2026-10-18T21:15:47-07:00 | SENT | peer=10.0.0.126:54321 | type=PEER_ACK | tcp_port=5002
+2026-10-18T21:15:47-07:00 | SENT | peer=10.0.0.126:56084 | type=hello
+2026-10-18T21:15:47-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=hello
+2026-10-18T21:15:47-07:00 | SYSTEM | peer=10.0.0.126:5001 | type=PEER_ADDED | node_id=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0
+2026-10-18T21:15:47-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:15:47-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:15:47-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T21:15:56-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:15:56-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T21:15:57-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:06-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:06-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T21:16:07-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:16-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:16-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_only.txt', 'sample.txt']
+2026-10-18T21:16:17-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:22-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=data_request
+2026-10-18T21:16:22-07:00 | SENT | peer=10.0.0.126:56084 | type=file_data
+2026-10-18T21:16:26-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:26-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:16:27-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:36-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:36-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:16:37-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:46-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:46-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:16:47-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:16:56-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:16:56-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:16:57-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:06-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:06-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:07-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:16-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:16-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:17-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:27-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:27-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:27-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:36-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:36-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:37-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:47-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:47-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:47-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:17:57-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:17:57-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:17:57-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:06-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:06-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:07-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:17-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:17-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:17-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:27-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:27-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:27-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:37-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:37-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:37-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:47-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:47-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:47-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:18:57-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:18:57-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:18:57-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:19:07-07:00 | RECEIVED | peer=10.0.0.126:56084 | type=file_list
+2026-10-18T21:19:07-07:00 | SYSTEM | peer=10.0.0.126:56084 | type=FILE_TABLE_UPDATED | filenames=['imac_note.txt', 'imac_only.txt', 'sample.txt']
+2026-10-18T21:19:07-07:00 | SENT | peer=731172d0-6bb4-48ed-9fcb-c8ecd87ca3b0 | type=file_list
+2026-10-18T21:19:12-07:00 | SYSTEM | peer=- | type=STOP | agent stopped
